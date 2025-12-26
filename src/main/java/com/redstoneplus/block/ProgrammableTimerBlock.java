@@ -124,6 +124,6 @@ public class ProgrammableTimerBlock extends BlockWithEntity {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateBlockEntityTicker(type, ModBlockEntities.PROGRAMMABLE_TIMER_BE, ProgrammableTimerBlockEntity::tick);
+        return type == ModBlockEntities.PROGRAMMABLE_TIMER_BE ? (BlockEntityTicker<T>) (world1, pos1, state1, be) -> ProgrammableTimerBlockEntity.tick(world1, pos1, state1, (ProgrammableTimerBlockEntity) be) : null;
     }
 }

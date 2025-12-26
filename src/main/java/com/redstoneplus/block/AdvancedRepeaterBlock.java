@@ -111,6 +111,6 @@ public class AdvancedRepeaterBlock extends BlockWithEntity {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateBlockEntityTicker(type, ModBlockEntities.ADVANCED_REPEATER_BE, AdvancedRepeaterBlockEntity::tick);
+        return type == ModBlockEntities.ADVANCED_REPEATER_BE ? (BlockEntityTicker<T>) (world1, pos1, state1, be) -> AdvancedRepeaterBlockEntity.tick(world1, pos1, state1, (AdvancedRepeaterBlockEntity) be) : null;
     }
 }

@@ -96,6 +96,6 @@ public class WirelessTransmitterBlock extends BlockWithEntity {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateBlockEntityTicker(type, ModBlockEntities.WIRELESS_TRANSMITTER_BE, WirelessTransmitterBlockEntity::tick);
+        return type == ModBlockEntities.WIRELESS_TRANSMITTER_BE ? (BlockEntityTicker<T>) (world1, pos1, state1, be) -> WirelessTransmitterBlockEntity.tick(world1, pos1, state1, (WirelessTransmitterBlockEntity) be) : null;
     }
 }

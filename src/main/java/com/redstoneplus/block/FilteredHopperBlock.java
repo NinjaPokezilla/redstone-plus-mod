@@ -106,6 +106,6 @@ public class FilteredHopperBlock extends BlockWithEntity {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateBlockEntityTicker(type, ModBlockEntities.FILTERED_HOPPER_BE, FilteredHopperBlockEntity::tick);
+        return type == ModBlockEntities.FILTERED_HOPPER_BE ? (BlockEntityTicker<T>) (world1, pos1, state1, be) -> FilteredHopperBlockEntity.tick(world1, pos1, state1, (FilteredHopperBlockEntity) be) : null;
     }
 }
