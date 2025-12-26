@@ -2,6 +2,7 @@ package com.redstoneplus.block;
 
 import com.redstoneplus.blockentity.ProgrammableTimerBlockEntity;
 import com.redstoneplus.registry.ModBlockEntities;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -25,6 +26,13 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class ProgrammableTimerBlock extends BlockWithEntity {
+    public static final MapCodec<ProgrammableTimerBlock> CODEC = createCodec(ProgrammableTimerBlock::new);
+    
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
+    }
+    
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static final BooleanProperty POWERED = Properties.POWERED;
     public static final BooleanProperty ENABLED = Properties.ENABLED;
@@ -116,6 +124,6 @@ public class ProgrammableTimerBlock extends BlockWithEntity {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlockEntities.PROGRAMMABLE_TIMER_BE, ProgrammableTimerBlockEntity::tick);
+        return validateBlockEntityTicker(type, ModBlockEntities.PROGRAMMABLE_TIMER_BE, ProgrammableTimerBlockEntity::tick);
     }
 }

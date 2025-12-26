@@ -2,6 +2,7 @@ package com.redstoneplus.block;
 
 import com.redstoneplus.blockentity.FilteredHopperBlockEntity;
 import com.redstoneplus.registry.ModBlockEntities;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -25,6 +26,12 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class FilteredHopperBlock extends BlockWithEntity {
+    public static final MapCodec<FilteredHopperBlock> CODEC = createCodec(FilteredHopperBlock::new);
+    
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
+    }
     public static final DirectionProperty FACING = Properties.HOPPER_FACING;
     public static final BooleanProperty ENABLED = Properties.ENABLED;
     
@@ -99,6 +106,6 @@ public class FilteredHopperBlock extends BlockWithEntity {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlockEntities.FILTERED_HOPPER_BE, FilteredHopperBlockEntity::tick);
+        return validateBlockEntityTicker(type, ModBlockEntities.FILTERED_HOPPER_BE, FilteredHopperBlockEntity::tick);
     }
 }

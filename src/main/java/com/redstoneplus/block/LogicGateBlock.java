@@ -2,6 +2,7 @@ package com.redstoneplus.block;
 
 import com.redstoneplus.blockentity.LogicGateBlockEntity;
 import com.redstoneplus.registry.ModBlockEntities;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -23,6 +24,13 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class LogicGateBlock extends BlockWithEntity {
+    public static final MapCodec<LogicGateBlock> CODEC = createCodec(LogicGateBlock::new);
+    
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
+    }
+    
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static final IntProperty MODE = IntProperty.of("mode", 0, 5); // 0=AND, 1=OR, 2=XOR, 3=NOT, 4=NAND, 5=NOR
     public static final BooleanProperty POWERED = Properties.POWERED;

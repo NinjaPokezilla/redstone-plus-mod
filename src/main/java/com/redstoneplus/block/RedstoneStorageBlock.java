@@ -2,6 +2,7 @@ package com.redstoneplus.block;
 
 import com.redstoneplus.blockentity.RedstoneStorageBlockEntity;
 import com.redstoneplus.registry.ModBlockEntities;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,6 +20,13 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class RedstoneStorageBlock extends BlockWithEntity {
+    public static final MapCodec<RedstoneStorageBlock> CODEC = createCodec(RedstoneStorageBlock::new);
+    
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
+    }
+    
     public static final IntProperty POWER = Properties.POWER;
 
     public RedstoneStorageBlock(Settings settings) {

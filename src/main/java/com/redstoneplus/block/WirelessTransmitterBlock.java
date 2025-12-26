@@ -2,6 +2,7 @@ package com.redstoneplus.block;
 
 import com.redstoneplus.blockentity.WirelessTransmitterBlockEntity;
 import com.redstoneplus.registry.ModBlockEntities;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -24,6 +25,13 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class WirelessTransmitterBlock extends BlockWithEntity {
+    public static final MapCodec<WirelessTransmitterBlock> CODEC = createCodec(WirelessTransmitterBlock::new);
+    
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
+    }
+    
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static final IntProperty CHANNEL = IntProperty.of("channel", 0, 15);
     public static final IntProperty POWER = Properties.POWER;
@@ -88,6 +96,6 @@ public class WirelessTransmitterBlock extends BlockWithEntity {
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, ModBlockEntities.WIRELESS_TRANSMITTER_BE, WirelessTransmitterBlockEntity::tick);
+        return validateBlockEntityTicker(type, ModBlockEntities.WIRELESS_TRANSMITTER_BE, WirelessTransmitterBlockEntity::tick);
     }
 }

@@ -2,6 +2,7 @@ package com.redstoneplus.block;
 
 import com.redstoneplus.blockentity.RedstoneCounterBlockEntity;
 import com.redstoneplus.registry.ModBlockEntities;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,6 +23,13 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 public class RedstoneCounterBlock extends BlockWithEntity {
+    public static final MapCodec<RedstoneCounterBlock> CODEC = createCodec(RedstoneCounterBlock::new);
+    
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
+    }
+    
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static final IntProperty COUNT = IntProperty.of("count", 0, 15);
     public static final IntProperty TARGET = IntProperty.of("target", 1, 15);

@@ -2,6 +2,7 @@ package com.redstoneplus.block;
 
 import com.redstoneplus.blockentity.RandomizerBlockEntity;
 import com.redstoneplus.registry.ModBlockEntities;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -24,6 +25,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Random;
 
 public class RandomizerBlock extends BlockWithEntity {
+    public static final MapCodec<RandomizerBlock> CODEC = createCodec(RandomizerBlock::new);
+    
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
+    }
+    
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
     public static final IntProperty POWER = Properties.POWER;
     
