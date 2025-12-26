@@ -1,0 +1,22 @@
+# Arquivos de build
+build/
+run/
+.gradle/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.launch
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.log
+*.hprof
+
+# Minecraft
+*.jar
+!gradle/wrapper/gradle-wrapper.jar

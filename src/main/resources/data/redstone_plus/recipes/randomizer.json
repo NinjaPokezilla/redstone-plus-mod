@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "RER",
+        "LCL",
+        "SSS"
+    ],
+    "key": {
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "E": {
+            "item": "minecraft:emerald"
+        },
+        "L": {
+            "item": "minecraft:lapis_lazuli"
+        },
+        "C": {
+            "item": "minecraft:clock"
+        },
+        "S": {
+            "item": "minecraft:stone"
+        }
+    },
+    "result": {
+        "item": "redstone_plus:randomizer",
+        "count": 1
+    }
+}

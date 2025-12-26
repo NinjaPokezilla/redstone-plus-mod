@@ -1,0 +1,29 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "STS",
+        "RQR",
+        "SPS"
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:stone"
+        },
+        "T": {
+            "item": "minecraft:redstone_torch"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "Q": {
+            "item": "minecraft:quartz"
+        },
+        "P": {
+            "item": "minecraft:repeater"
+        }
+    },
+    "result": {
+        "item": "redstone_plus:logic_gate",
+        "count": 1
+    }
+}

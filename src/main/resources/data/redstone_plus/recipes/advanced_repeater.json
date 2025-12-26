@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "   ",
+        "RPR",
+        "SCS"
+    ],
+    "key": {
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "P": {
+            "item": "minecraft:repeater"
+        },
+        "S": {
+            "item": "minecraft:stone"
+        },
+        "C": {
+            "item": "minecraft:comparator"
+        }
+    },
+    "result": {
+        "item": "redstone_plus:advanced_repeater",
+        "count": 1
+    }
+}

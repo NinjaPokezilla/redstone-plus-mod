@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "RCR",
+        "RPR",
+        "SSS"
+    ],
+    "key": {
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "C": {
+            "item": "minecraft:clock"
+        },
+        "P": {
+            "item": "minecraft:repeater"
+        },
+        "S": {
+            "item": "minecraft:stone"
+        }
+    },
+    "result": {
+        "item": "redstone_plus:programmable_timer",
+        "count": 1
+    }
+}

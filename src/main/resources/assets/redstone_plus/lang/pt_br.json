@@ -1,0 +1,14 @@
+{
+    "block.redstone_plus.wireless_transmitter": "Transmissor Wireless",
+    "block.redstone_plus.wireless_receiver": "Receptor Wireless",
+    "block.redstone_plus.memory_block": "Bloco de Memória",
+    "block.redstone_plus.logic_gate": "Porta Lógica",
+    "block.redstone_plus.advanced_repeater": "Repetidor Avançado",
+    "block.redstone_plus.player_pressure_plate": "Placa de Pressão para Jogador",
+    "block.redstone_plus.filtered_hopper": "Funil Filtrado",
+    "block.redstone_plus.redstone_counter": "Contador de Redstone",
+    "block.redstone_plus.randomizer": "Randomizador",
+    "block.redstone_plus.programmable_timer": "Timer Programável",
+    "block.redstone_plus.redstone_storage": "Bloco de Armazenamento de Redstone",
+    "item.redstone_plus.redstone_analyzer": "Analisador de Redstone"
+}

@@ -1,0 +1,22 @@
+{
+    "schemaVersion": 1,
+    "id": "redstone_plus",
+    "version": "${version}",
+    "name": "Redstone Plus",
+    "description": "Expande as funcionalidades de redstone com novos blocos e itens!",
+    "authors": ["João Vitor"],
+    "contact": {},
+    "license": "MIT",
+    "icon": "assets/redstone_plus/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": ["com.redstoneplus.RedstonePlusMod"]
+    },
+    "mixins": [],
+    "depends": {
+        "fabricloader": ">=0.15.0",
+        "minecraft": "~1.20.4",
+        "java": ">=17",
+        "fabric-api": "*"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/pressure_plate_down",
+    "textures": {
+        "texture": "redstone_plus:block/player_pressure_plate"
+    }
+}

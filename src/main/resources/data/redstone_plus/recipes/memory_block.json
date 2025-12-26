@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "STS",
+        "RCR",
+        "STS"
+    ],
+    "key": {
+        "S": {
+            "item": "minecraft:stone"
+        },
+        "T": {
+            "item": "minecraft:redstone_torch"
+        },
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "C": {
+            "item": "minecraft:comparator"
+        }
+    },
+    "result": {
+        "item": "redstone_plus:memory_block",
+        "count": 1
+    }
+}

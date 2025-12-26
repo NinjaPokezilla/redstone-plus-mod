@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "RBR",
+        "RCR",
+        "SSS"
+    ],
+    "key": {
+        "R": {
+            "item": "minecraft:redstone"
+        },
+        "B": {
+            "item": "minecraft:redstone_block"
+        },
+        "C": {
+            "item": "minecraft:comparator"
+        },
+        "S": {
+            "item": "minecraft:stone"
+        }
+    },
+    "result": {
+        "item": "redstone_plus:redstone_storage",
+        "count": 1
+    }
+}
